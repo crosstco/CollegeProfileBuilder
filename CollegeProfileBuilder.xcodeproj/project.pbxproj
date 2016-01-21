@@ -14,6 +14,8 @@
 		3B1BB5A31C4FE8DB002E8D88 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B1BB5A11C4FE8DB002E8D88 /* LaunchScreen.storyboard */; };
 		3B1BB5AE1C4FE8DC002E8D88 /* CollegeProfileBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1BB5AD1C4FE8DC002E8D88 /* CollegeProfileBuilderTests.swift */; };
 		3B1BB5B91C4FE8DC002E8D88 /* CollegeProfileBuilderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1BB5B81C4FE8DC002E8D88 /* CollegeProfileBuilderUITests.swift */; };
+		3B1BB5C71C4FEC07002E8D88 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1BB5C61C4FEC07002E8D88 /* DetailViewController.swift */; };
+		3B1BB5C91C4FECE2002E8D88 /* College.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1BB5C81C4FECE2002E8D88 /* College.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		3B1BB5B41C4FE8DC002E8D88 /* CollegeProfileBuilderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CollegeProfileBuilderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B1BB5B81C4FE8DC002E8D88 /* CollegeProfileBuilderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollegeProfileBuilderUITests.swift; sourceTree = "<group>"; };
 		3B1BB5BA1C4FE8DC002E8D88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3B1BB5C61C4FEC07002E8D88 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		3B1BB5C81C4FECE2002E8D88 /* College.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = College.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +103,9 @@
 			children = (
 				3B1BB5981C4FE8DB002E8D88 /* AppDelegate.swift */,
 				3B1BB59A1C4FE8DB002E8D88 /* ViewController.swift */,
+				3B1BB5C81C4FECE2002E8D88 /* College.swift */,
 				3B1BB59C1C4FE8DB002E8D88 /* Main.storyboard */,
+				3B1BB5C61C4FEC07002E8D88 /* DetailViewController.swift */,
 				3B1BB59F1C4FE8DB002E8D88 /* Assets.xcassets */,
 				3B1BB5A11C4FE8DB002E8D88 /* LaunchScreen.storyboard */,
 				3B1BB5A41C4FE8DB002E8D88 /* Info.plist */,
@@ -259,8 +265,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B1BB5C71C4FEC07002E8D88 /* DetailViewController.swift in Sources */,
 				3B1BB59B1C4FE8DB002E8D88 /* ViewController.swift in Sources */,
 				3B1BB5991C4FE8DB002E8D88 /* AppDelegate.swift in Sources */,
+				3B1BB5C91C4FECE2002E8D88 /* College.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
