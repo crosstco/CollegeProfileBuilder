@@ -21,6 +21,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         tableView.dataSource = self
         tableView.delegate = self
+        editButton.tag = 0
         
         colleges.append(College(name: "Purdue University", location: "West Lafayette, IN", numStudents: 38770, image: UIImage(named: "purdue")!))
         
@@ -32,10 +33,36 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     
     @IBAction func editButtonTapped(sender: AnyObject) {
-        
-        
+        if editButton.tag == 0 {
+            tableView.editing = true
+            editButton.tag = 1
+        } else {
+            tableView.editing = false
+            editButton.tag = 0
+        }
     }
     
+    func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    
+    func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
+        
+        let college = colleges[sourceIndexPath.row]
+        colleges.removeAtIndex(sourceIndexPath.row)
+        
+        colleges.insert(college, atIndex: destinationIndexPath.row)
+    }
+    
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        if editingStyle == .Delete {
+            colleges.removeAtIndex(indexPath.row)
+            tableView.reloadData()
+        }
+    }
     
     
     @IBAction func addButtonTapped(sender: AnyObject) {
