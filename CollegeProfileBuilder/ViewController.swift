@@ -19,11 +19,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        colleges.append(College(name: "Purdue University", location: "West Lafayette, IN", numStudents: 40000, image: UIImage(named: "default")!))
+        tableView.dataSource = self
+        tableView.delegate = self
         
-            colleges.append(College(name: "University of Illinois", location: "Urbana-Champaign, IL", numStudents: 40000, image: UIImage(named: "default")!))
+        colleges.append(College(name: "Purdue University", location: "West Lafayette, IN", numStudents: 38770, image: UIImage(named: "purdue")!))
         
-        colleges.append(College(name: "University of Wisconsin - Madison", location: "West Lafayette, IN", numStudents: 40000, image: UIImage(named: "default")!))
+            colleges.append(College(name: "University of Illinois", location: "Urbana-Champaign, IL", numStudents: 44087, image: UIImage(named: "uiuc")!))
+        
+        colleges.append(College(name: "University of Wisconsin - Madison", location: "Madison, WI", numStudents: 43193, image: UIImage(named: "uwmadison")!))
     }
     
     
@@ -42,6 +45,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int { //sets num rows in table
         return colleges.count
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        let detailView = segue.destinationViewController as! DetailViewController
+        let selectedRow = tableView.indexPathForSelectedRow?.row
+        detailView.college = colleges[selectedRow!]
     }
 
 }

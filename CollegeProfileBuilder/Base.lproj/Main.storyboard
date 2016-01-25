@@ -101,9 +101,26 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tg3-Ro-FPt">
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gvI-jf-R4K">
                                 <rect key="frame" x="67" y="64" width="240" height="200"/>
-                            </imageView>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Apr-w7-bhZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="200"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tg3-Ro-FPt">
+                                                <rect key="frame" x="0.0" y="0.0" width="240" height="200"/>
+                                                <accessibility key="accessibilityConfiguration">
+                                                    <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
+                                                </accessibility>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="200" id="S5j-FK-XD7"/>
+                                                    <constraint firstAttribute="width" constant="240" id="d8O-C8-ZXG"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -112,12 +129,16 @@
                             <constraint firstItem="qHf-Ts-4JK" firstAttribute="centerX" secondItem="7qy-lm-qeg" secondAttribute="centerX" id="QRQ-o9-G8t"/>
                             <constraint firstItem="kuX-Lx-sZI" firstAttribute="centerY" secondItem="7qy-lm-qeg" secondAttribute="centerY" id="UmZ-bN-2Vs"/>
                             <constraint firstItem="3mL-1J-0MC" firstAttribute="top" secondItem="qHf-Ts-4JK" secondAttribute="bottom" constant="52" id="VRO-cW-1kd"/>
-                            <constraint firstItem="tg3-Ro-FPt" firstAttribute="centerX" secondItem="7qy-lm-qeg" secondAttribute="centerX" id="XNx-xl-WhF"/>
                             <constraint firstItem="kuX-Lx-sZI" firstAttribute="centerX" secondItem="7qy-lm-qeg" secondAttribute="centerX" id="nWC-9Q-hh7"/>
-                            <constraint firstItem="tg3-Ro-FPt" firstAttribute="top" secondItem="HQA-Na-7W2" secondAttribute="bottom" id="sIg-kv-zTX"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="imageView" destination="tg3-Ro-FPt" id="xxa-YL-oUv"/>
+                        <outlet property="locationTF" destination="qHf-Ts-4JK" id="l3R-vP-ePJ"/>
+                        <outlet property="nameTF" destination="kuX-Lx-sZI" id="DbB-am-JT4"/>
+                        <outlet property="numStudentsTF" destination="3mL-1J-0MC" id="rIN-cO-cqM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aBm-ye-fZK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
