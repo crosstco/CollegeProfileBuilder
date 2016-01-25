@@ -30,6 +30,52 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     
+    
+    @IBAction func editButtonTapped(sender: AnyObject) {
+        
+        
+    }
+    
+    
+    
+    @IBAction func addButtonTapped(sender: AnyObject) {
+        let myAlert = UIAlertController(title: "Add College", message: nil, preferredStyle: .Alert)
+        
+        myAlert.addTextFieldWithConfigurationHandler { (nameTextField) -> Void in
+            nameTextField.placeholder = "Add College Name"
+        }
+        myAlert.addTextFieldWithConfigurationHandler { (locationTextField) -> Void in
+            locationTextField.placeholder = "Add College Location"
+        }
+        
+        myAlert.addTextFieldWithConfigurationHandler { (numStudentsTextField) -> Void in
+            numStudentsTextField.placeholder = "Add Student Population"
+            numStudentsTextField.keyboardType = UIKeyboardType.NumberPad
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        myAlert.addAction(cancelAction)
+        
+        let addAction = UIAlertAction(title: "Add", style: .Default) { (add) -> Void in
+            
+            let collegeTF = myAlert.textFields![0] as UITextField
+            let locationTF = myAlert.textFields![1] as UITextField
+            let numStudentsTF = myAlert.textFields![2] as UITextField
+            
+            self.colleges.append(College(name: collegeTF.text!, location: locationTF.text!, numStudents: Int(numStudentsTF.text!)!))
+            self.tableView.reloadData()
+        }
+        myAlert.addAction(addAction)
+        
+        self.presentViewController(myAlert, animated: true, completion: nil) //presents alert view
+        
+    }
+    
+    
+    
+    
+    
+
     //REQUIRED FUNCTIONS for TableView Protocols
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell { //Sends data to cell
         
