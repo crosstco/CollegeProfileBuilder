@@ -28,6 +28,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             colleges.append(College(name: "University of Illinois", location: "Urbana-Champaign, IL", numStudents: 44087, image: UIImage(named: "uiuc")!))
         
         colleges.append(College(name: "University of Wisconsin - Madison", location: "Madison, WI", numStudents: 43193, image: UIImage(named: "uwmadison")!))
+        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        tableView.reloadData()
     }
     
     
@@ -125,6 +130,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let detailView = segue.destinationViewController as! DetailViewController
         let selectedRow = tableView.indexPathForSelectedRow?.row
         detailView.college = colleges[selectedRow!]
+        detailView.selectedCellIndex = selectedRow!
     }
 
 }

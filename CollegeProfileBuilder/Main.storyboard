@@ -33,14 +33,14 @@
                                                     <rect key="frame" x="15" y="5" width="32" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Jpp-a4-NJg">
                                                     <rect key="frame" x="15" y="25" width="31" height="14"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -63,19 +63,19 @@
                     <navigationItem key="navigationItem" id="VUR-vn-ALC">
                         <barButtonItem key="leftBarButtonItem" systemItem="edit" id="Vyn-jz-Gco">
                             <connections>
-                                <action selector="editButtonTapped:" destination="BYZ-38-t0r" id="lVw-Fc-Yk8"/>
+                                <action selector="editButtonTapped:" destination="BYZ-38-t0r" id="22V-rl-3Ta"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Uwt-uo-djD">
                             <connections>
-                                <action selector="addButtonTapped:" destination="BYZ-38-t0r" id="Bdp-EJ-SkV"/>
+                                <action selector="addButtonTapped:" destination="BYZ-38-t0r" id="gSE-bZ-Fat"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="editButton" destination="Vyn-jz-Gco" id="QlH-Bh-MEj"/>
-                        <outlet property="tableView" destination="FBc-hU-Bv4" id="MrV-fX-ZyN"/>
+                        <outlet property="editButton" destination="Vyn-jz-Gco" id="1BO-K3-AvT"/>
+                        <outlet property="tableView" destination="FBc-hU-Bv4" id="aZX-Q7-HCe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -109,31 +109,28 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gvI-jf-R4K">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7dI-Mb-Jgs">
                                 <rect key="frame" x="67" y="64" width="240" height="200"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Apr-w7-bhZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="200"/>
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tg3-Ro-FPt">
-                                                <rect key="frame" x="0.0" y="0.0" width="240" height="200"/>
-                                                <accessibility key="accessibilityConfiguration">
-                                                    <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
-                                                </accessibility>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="200" id="S5j-FK-XD7"/>
-                                                    <constraint firstAttribute="width" constant="240" id="d8O-C8-ZXG"/>
-                                                </constraints>
-                                            </imageView>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                            </stackView>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="9dQ-ic-pE2"/>
+                                    <constraint firstAttribute="width" constant="240" id="DEr-bE-uew"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gRU-mN-vi1">
+                                <rect key="frame" x="116" y="526" width="143" height="30"/>
+                                <state key="normal" title="Save College Info"/>
+                                <connections>
+                                    <action selector="saveCollegeInfo:" destination="m86-l8-Hfp" eventType="touchUpInside" id="n6V-pR-Ibn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="qHf-Ts-4JK" firstAttribute="top" secondItem="kuX-Lx-sZI" secondAttribute="bottom" constant="50" id="07L-iG-W7c"/>
+                            <constraint firstItem="gRU-mN-vi1" firstAttribute="top" secondItem="3mL-1J-0MC" secondAttribute="bottom" constant="20" id="9Ly-Az-cKX"/>
+                            <constraint firstItem="7dI-Mb-Jgs" firstAttribute="centerX" secondItem="7qy-lm-qeg" secondAttribute="centerX" id="DPH-9v-uUq"/>
                             <constraint firstItem="3mL-1J-0MC" firstAttribute="centerX" secondItem="7qy-lm-qeg" secondAttribute="centerX" id="Dss-NL-9GG"/>
+                            <constraint firstItem="gRU-mN-vi1" firstAttribute="centerX" secondItem="7qy-lm-qeg" secondAttribute="centerX" id="OMU-Fb-1nC"/>
                             <constraint firstItem="qHf-Ts-4JK" firstAttribute="centerX" secondItem="7qy-lm-qeg" secondAttribute="centerX" id="QRQ-o9-G8t"/>
                             <constraint firstItem="kuX-Lx-sZI" firstAttribute="centerY" secondItem="7qy-lm-qeg" secondAttribute="centerY" id="UmZ-bN-2Vs"/>
                             <constraint firstItem="3mL-1J-0MC" firstAttribute="top" secondItem="qHf-Ts-4JK" secondAttribute="bottom" constant="52" id="VRO-cW-1kd"/>
@@ -142,10 +139,10 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="imageView" destination="tg3-Ro-FPt" id="xxa-YL-oUv"/>
-                        <outlet property="locationTF" destination="qHf-Ts-4JK" id="l3R-vP-ePJ"/>
-                        <outlet property="nameTF" destination="kuX-Lx-sZI" id="DbB-am-JT4"/>
-                        <outlet property="numStudentsTF" destination="3mL-1J-0MC" id="rIN-cO-cqM"/>
+                        <outlet property="imageView" destination="7dI-Mb-Jgs" id="Zgj-NJ-gRc"/>
+                        <outlet property="locationTF" destination="qHf-Ts-4JK" id="boG-QR-YvT"/>
+                        <outlet property="nameTF" destination="kuX-Lx-sZI" id="MTz-ZW-ihT"/>
+                        <outlet property="numStudentsTF" destination="3mL-1J-0MC" id="ggL-ND-oxw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aBm-ye-fZK" userLabel="First Responder" sceneMemberID="firstResponder"/>

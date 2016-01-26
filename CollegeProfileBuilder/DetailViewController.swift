@@ -16,8 +16,8 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var numStudentsTF: UITextField!
     
     
-    
-    var college : College = College(name: "", location: "", numStudents: 0, image: UIImage(named: "default")!)
+    var selectedCellIndex = 0
+    var college : College!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,4 +28,14 @@ class DetailViewController: UIViewController {
         numStudentsTF.text = String(college.numStudents)
         
     }
+    
+    @IBAction func saveCollegeInfo(sender: AnyObject) {
+        college.name = nameTF.text!
+        college.location = locationTF.text!
+        college.numStudents = Int(numStudentsTF.text!)!
+        college.image = imageView.image
+    }
+    
+    
+    
 }
